@@ -1,0 +1,1118 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00E7D97B87F01328ADFF1BA0B91FB589 /* socket.IO-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F722302DA2D550246DF3756A0EC51E /* socket.IO-dummy.m */; };
+		04A7D6AADAB213CE7D26F8EAD2F87536 /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = E6D2EF45A4C14EA1A86C1536CC7F2CA3 /* MASUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		068EF598E554EC57038ACFB89CC2C47A /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E487DC16E8AB2D79482D7CBE3CACB18 /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		091D17D5D8F832D28546A72B788CF0AE /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 30A8A5F3FB280FDAAFB2527F74ADE1E1 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F3DF5C3BEFCC9838B53C37735B414BE /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FBFE61B10F35129BD1EB330C3A20AC /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		0F6CE1F85BE7F5D3B53DCA9117F57D6B /* SocketIOTransportWebsocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAD26334E52C9737237EC84CB5978DE /* SocketIOTransportWebsocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		0FDB2B4F75591851F0F119EAE70B3F63 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 669C714BB1CB35F835C47727FA178628 /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11FC01FD489120C46343BCA1B0CBD1D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C89B751AB36830542419DFBBB257C61A /* UIKit.framework */; };
+		174DA3734A5B83ECA4A415101C9A3432 /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 675F24B07ABF1530D81BC2ADEF84A00D /* SocketRocket.framework */; };
+		1B7D0DF96DD2CF9B02E9CF52F4E4E840 /* SocketIOPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E6A466150F24E00FDD86D791FA1713 /* SocketIOPacket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		235B4C20315F041FE54777EBD05CF88D /* SocketIOPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 477D69D12A0742DE27474D053CB00AEE /* SocketIOPacket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		243E09A20681D1B04C750A1A997BC68D /* SocketIO.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD4158E0C27A3A1DBF54D3B423B5C03 /* SocketIO.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2854C9B1086758BD2B6681206B6759B4 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 29EE6CC7534DCF7FCEDF585641E8C64B /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A17CA78B2C339C880047DF802234CED /* SocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 378464B30B6640D5C4038F9427FE0291 /* SocketIO.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		457ACF9150DCF9AF445B129CC9678FB6 /* Masonry-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BEF5565BC5C46D34414985BD7E89B52 /* Masonry-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		459C8BFCA246EB732075CDB70374D1B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17CE9E24CA9CBBEBA1A82EC7F0B9B77D /* Foundation.framework */; };
+		4C5B367942708E41EF8AF8B49ADCC665 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17CE9E24CA9CBBEBA1A82EC7F0B9B77D /* Foundation.framework */; };
+		4D4F2050654580FE1F1D5F4F82CEDDB8 /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 442283B0061E8188C690AF5D42F77FB1 /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5087F45FF2254E7865A221E5DB3419BD /* socket.IO-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 93339CADB19572C7DD9C47EDA60282C5 /* socket.IO-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		53BDF81D0A52EA526D597A5C5B139D7F /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA16F965470F9D604D0DA62A66ECAF3 /* MASCompositeConstraint.m */; };
+		59F81DE0305CC2AC448D2A3C6B3280A2 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = CE00477C11971D8979DFE240D0F140DB /* MASConstraint.m */; };
+		636BBA734C1A17A734761D674FAE8800 /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 49EE1827A2D4094D993089A1C0700F72 /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C23BBF56ED4DCC10CA1765A6736D1F8 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 2222E802C7EADEE10EAA70DE8143382C /* MASLayoutConstraint.m */; };
+		73BBDACC22CCA36A6DAAA167AD780BAF /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D133553CB44BBAD689C9C0BBBFA9366 /* MASConstraintMaker.m */; };
+		756DF24546C7D91459DCADC8F1C98660 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = D51717CB48723E81F9B8E7B6126CAE6A /* MASViewConstraint.m */; };
+		7A9E3D1BD20F2B7DDA24E4DE9A8F7091 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 510EBA6C2450B79F930EA10A8FF0F689 /* CFNetwork.framework */; };
+		7C17BEA6034027310D1D205DB2008CA5 /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C9ED44A92D62586D41F7BB29977C44C /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		821A1B51E6BB03F4F4EF0FCDAFD2CF60 /* SocketIOTransportXHR.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FB2FF0763A2CC1B8E84842C95B14941 /* SocketIOTransportXHR.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		88DE7BAB1F4999A5F4B617F44E5FD1D3 /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = ADD09949872A26B9C80F70D649B98B49 /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A6EEF68E7625AB66A3A8DED1594F88F /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FC4A3B0ABD0558BD62A1248E00437D /* ViewController+MASAdditions.m */; };
+		8CD45B754192DE834B642975E85257AB /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = B6E6DEDE4D9ECF3F5364DC598E71FCE4 /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A08A8AB356264E248D01F1BC0EF08166 /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D479AEF44BD5D28959AAAE79D7DE8F94 /* Masonry-dummy.m */; };
+		A11E0CAD1E4D5E44E2CA1EDB54EC3B2E /* SocketRocket-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BF1A7C4E71727D954FF3443230CCB4 /* SocketRocket-dummy.m */; };
+		A2ABBB3F946AD7FC92C0FC145C0B0E5D /* SocketIOJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D9005632CFFDCC47C1F0B752CCA91C81 /* SocketIOJSONSerialization.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A7370CE9231F9A4927142D79021879EC /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1072F3ECACD0DBB48A83A1A8FBA626 /* MASViewAttribute.m */; };
+		AE059848BB1F83CCC049D06842F0671F /* SocketRocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 572524641512FC0F521CAA9586E25A7D /* SocketRocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AFC6F870EB9FC6AB19DEC10C6C5D742B /* SocketIOTransportXHR.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A65B9B15870DF4C010D964D3378051 /* SocketIOTransportXHR.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		B44383A3FA435C1E986942C817339302 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2ADE7E3107D8B8B63BBE7D64651AB151 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B602474FDB011E75853C1783F7C06645 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520030D80E46EFCF4FD5076352EFED37 /* Security.framework */; };
+		BD23E5BF25955076D78EC0A5A84CF953 /* SocketIOJSONSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 44D5A7DC5ABC0DB9802644CE97074402 /* SocketIOJSONSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C0A16E00B4BC2D88A7833D5DAED62942 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E43AD9D9ADE88F6980FEDF2A4D40C9BB /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C0C6DC390E4199B67062665CF0C45092 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17CE9E24CA9CBBEBA1A82EC7F0B9B77D /* Foundation.framework */; };
+		C60FB7A80750CC6BD4C21DC023982C5C /* Pods-WebRtcRoomIOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD0CBD7CB2E0D7D9D3ED51A02EA8C69 /* Pods-WebRtcRoomIOS-dummy.m */; };
+		C7C59A4FFF2CE3EAD950649ECB9E317F /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 942F1CFDE96D61B091066714892A17EB /* SRWebSocket.m */; };
+		C8DF22EAFFC2F81B0426E2165AC93E44 /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 25CD9F0904EE576EFA40B98B41934D90 /* MASConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CC121771B27E97292AC1EC218796CD4A /* SocketIOTransport.h in Headers */ = {isa = PBXBuildFile; fileRef = FEDED2F5311BADB97D9DBDBA81A84346 /* SocketIOTransport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CC8F9B4A1AC4E276EA8AA4C6F2BF3CD4 /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = AF5FD76BBF8CD946E9AE9202BE7E18C0 /* Masonry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0AB43967BA535202F14C7A614DD9BAF /* SocketRocket-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B116A9BD17851F35453D4E07C086F62 /* SocketRocket-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D1B5B92F1D6FFB00957E81AD09F45722 /* SocketIOTransportWebsocket.h in Headers */ = {isa = PBXBuildFile; fileRef = B0B0E80F09703370AA8FF2C16662A2B8 /* SocketIOTransportWebsocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8B1525CB3DFCBD8E5032680530413D9 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 95FA1052C2C7D031671079BA5FDED5B1 /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E72EDE323AC9F92EC8A00A93AC186093 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B0916726C00F0D837D14484F160B2687 /* NSArray+MASAdditions.m */; };
+		F1F71E6A4EDBD05D87CC473FCD21CCEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17CE9E24CA9CBBEBA1A82EC7F0B9B77D /* Foundation.framework */; };
+		F434E9625CA9BC8B5AE782AFEC7421EE /* SRWebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = BB9737746BC0F2B57D73C8494E2B7895 /* SRWebSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F4B3E44D5D2F6508BC1BB35A9FBDEC70 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 588562FBE2E995D95003333E47F17ED3 /* View+MASAdditions.m */; };
+		FE3AEA066DD0DED153FF3AB1622011FA /* Pods-WebRtcRoomIOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A4E00671D3DD2C47DB22AA1EB012216E /* Pods-WebRtcRoomIOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2DE87E52699CA3129D6B94517ECBA6C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEA75E280412409EABD5E33C0A87D052;
+			remoteInfo = SocketRocket;
+		};
+		82B32318C9359CAD9CE8DC90DEED1C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D52144DE9D7255DE912490FF5A806573;
+			remoteInfo = Masonry;
+		};
+		994E5336630A078943704AA713CA63D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 76FB24CDDBE77115CBD482D1F3495E0A;
+			remoteInfo = socket.IO;
+		};
+		F2B6439A7560B07D0EA44B3DC9680D12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEA75E280412409EABD5E33C0A87D052;
+			remoteInfo = SocketRocket;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02284032C75966ACA1317E5F45AA29B1 /* Pods_WebRtcRoomIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WebRtcRoomIOS.framework; path = "Pods-WebRtcRoomIOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0308ABFDCC3387F3B1EBF11AEE014E4C /* Pods-WebRtcRoomIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WebRtcRoomIOS.release.xcconfig"; sourceTree = "<group>"; };
+		0764B613F58AEEFF5578D31E8BD2C723 /* SocketRocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-prefix.pch"; sourceTree = "<group>"; };
+		09BF1A7C4E71727D954FF3443230CCB4 /* SocketRocket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SocketRocket-dummy.m"; sourceTree = "<group>"; };
+		0A7E4F0F664E12F959E1DB1C0BD2295F /* socket.IO.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = socket.IO.xcconfig; sourceTree = "<group>"; };
+		0AA16F965470F9D604D0DA62A66ECAF3 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
+		0BE5816EE02C8D29E516ED552292EDBB /* Pods-WebRtcRoomIOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WebRtcRoomIOS.modulemap"; sourceTree = "<group>"; };
+		0CD891AD280ABD2DB47567C454B535B3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E0D8BFAC276DC547B9DFFC5998F2AF7 /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
+		17CE9E24CA9CBBEBA1A82EC7F0B9B77D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		1A7C528F4541133AE242B564D2667AF0 /* Masonry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.xcconfig; sourceTree = "<group>"; };
+		1E487DC16E8AB2D79482D7CBE3CACB18 /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
+		1E82E65A08A8188AA20A32E50C1CD74A /* Masonry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Masonry.modulemap; sourceTree = "<group>"; };
+		1EAD26334E52C9737237EC84CB5978DE /* SocketIOTransportWebsocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SocketIOTransportWebsocket.m; sourceTree = "<group>"; };
+		2194B6F06322BC74620D3556BC7A9648 /* socket_IO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = socket_IO.framework; path = socket.IO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2222E802C7EADEE10EAA70DE8143382C /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
+		25CD9F0904EE576EFA40B98B41934D90 /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
+		25E6A466150F24E00FDD86D791FA1713 /* SocketIOPacket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SocketIOPacket.m; sourceTree = "<group>"; };
+		29EE6CC7534DCF7FCEDF585641E8C64B /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		2ADE7E3107D8B8B63BBE7D64651AB151 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		3064EC825B919E97AE23D6681033C737 /* SocketRocket.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SocketRocket.xcconfig; sourceTree = "<group>"; };
+		30A8A5F3FB280FDAAFB2527F74ADE1E1 /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
+		378464B30B6640D5C4038F9427FE0291 /* SocketIO.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SocketIO.m; sourceTree = "<group>"; };
+		3CB653E894D2F3C5A922EC09527472E7 /* SocketRocket.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SocketRocket.modulemap; sourceTree = "<group>"; };
+		442283B0061E8188C690AF5D42F77FB1 /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
+		44D5A7DC5ABC0DB9802644CE97074402 /* SocketIOJSONSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SocketIOJSONSerialization.h; sourceTree = "<group>"; };
+		46FBEB9EAB1EEEF1ADF5A514B736E424 /* Pods-WebRtcRoomIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WebRtcRoomIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		477D69D12A0742DE27474D053CB00AEE /* SocketIOPacket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SocketIOPacket.h; sourceTree = "<group>"; };
+		49EE1827A2D4094D993089A1C0700F72 /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
+		4A1072F3ECACD0DBB48A83A1A8FBA626 /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
+		510EBA6C2450B79F930EA10A8FF0F689 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		520030D80E46EFCF4FD5076352EFED37 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		56FC4A3B0ABD0558BD62A1248E00437D /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		572524641512FC0F521CAA9586E25A7D /* SocketRocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SocketRocket.h; path = SocketRocket/SocketRocket.h; sourceTree = "<group>"; };
+		588562FBE2E995D95003333E47F17ED3 /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
+		5910A60B3D360535FF468412B9AF5637 /* Pods-WebRtcRoomIOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WebRtcRoomIOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		598D0E086F9877445336407966ADDE61 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B116A9BD17851F35453D4E07C086F62 /* SocketRocket-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-umbrella.h"; sourceTree = "<group>"; };
+		5BD703481CAFD0686DF5D97ACB382AE4 /* Pods-WebRtcRoomIOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WebRtcRoomIOS-resources.sh"; sourceTree = "<group>"; };
+		5C9ED44A92D62586D41F7BB29977C44C /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
+		669C714BB1CB35F835C47727FA178628 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		675F24B07ABF1530D81BC2ADEF84A00D /* SocketRocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocketRocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		720C27414544A4EB55BF0A3E8A4C441C /* Pods-WebRtcRoomIOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WebRtcRoomIOS-frameworks.sh"; sourceTree = "<group>"; };
+		74FBFE61B10F35129BD1EB330C3A20AC /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		7D133553CB44BBAD689C9C0BBBFA9366 /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
+		8549C0DB4A259C0C4E9F3AE56030A21A /* socket.IO-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "socket.IO-prefix.pch"; sourceTree = "<group>"; };
+		8FD0CBD7CB2E0D7D9D3ED51A02EA8C69 /* Pods-WebRtcRoomIOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WebRtcRoomIOS-dummy.m"; sourceTree = "<group>"; };
+		93339CADB19572C7DD9C47EDA60282C5 /* socket.IO-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "socket.IO-umbrella.h"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		942F1CFDE96D61B091066714892A17EB /* SRWebSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SRWebSocket.m; path = SocketRocket/SRWebSocket.m; sourceTree = "<group>"; };
+		94F722302DA2D550246DF3756A0EC51E /* socket.IO-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "socket.IO-dummy.m"; sourceTree = "<group>"; };
+		95FA1052C2C7D031671079BA5FDED5B1 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		96A65B9B15870DF4C010D964D3378051 /* SocketIOTransportXHR.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SocketIOTransportXHR.m; sourceTree = "<group>"; };
+		9AD4158E0C27A3A1DBF54D3B423B5C03 /* SocketIO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SocketIO.h; sourceTree = "<group>"; };
+		9BEF5565BC5C46D34414985BD7E89B52 /* Masonry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-umbrella.h"; sourceTree = "<group>"; };
+		9FB2FF0763A2CC1B8E84842C95B14941 /* SocketIOTransportXHR.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportXHR.h; sourceTree = "<group>"; };
+		A4E00671D3DD2C47DB22AA1EB012216E /* Pods-WebRtcRoomIOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WebRtcRoomIOS-umbrella.h"; sourceTree = "<group>"; };
+		ADD09949872A26B9C80F70D649B98B49 /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
+		AF5FD76BBF8CD946E9AE9202BE7E18C0 /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
+		B0916726C00F0D837D14484F160B2687 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		B0B0E80F09703370AA8FF2C16662A2B8 /* SocketIOTransportWebsocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportWebsocket.h; sourceTree = "<group>"; };
+		B4D1463F62968C27A797A5156EAD58C5 /* Pods-WebRtcRoomIOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WebRtcRoomIOS-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B50B2DD21E76307E84A0397344BD5CEE /* socket.IO.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = socket.IO.modulemap; sourceTree = "<group>"; };
+		B6E6DEDE4D9ECF3F5364DC598E71FCE4 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
+		B805EDB34DDD93CE9A199838403E05F2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB9737746BC0F2B57D73C8494E2B7895 /* SRWebSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SRWebSocket.h; path = SocketRocket/SRWebSocket.h; sourceTree = "<group>"; };
+		BE873C42097A39C5CAB8101350263601 /* SocketRocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SocketRocket.framework; path = SocketRocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C89B751AB36830542419DFBBB257C61A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		CE00477C11971D8979DFE240D0F140DB /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
+		D479AEF44BD5D28959AAAE79D7DE8F94 /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
+		D51717CB48723E81F9B8E7B6126CAE6A /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
+		D71E9410050145A5CF158782D7CAF32D /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebRTC.framework; path = Frameworks/frameworks/WebRTC.framework; sourceTree = "<group>"; };
+		D8CAAFA43D7C47132F900B12FFBE2065 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9005632CFFDCC47C1F0B752CCA91C81 /* SocketIOJSONSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SocketIOJSONSerialization.m; sourceTree = "<group>"; };
+		DAD4F7380AE9439B508191CCFFD5990B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E43AD9D9ADE88F6980FEDF2A4D40C9BB /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		E6D2EF45A4C14EA1A86C1536CC7F2CA3 /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
+		FEDED2F5311BADB97D9DBDBA81A84346 /* SocketIOTransport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SocketIOTransport.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		41AC88BFF599A38810A511F767BDEAA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1F71E6A4EDBD05D87CC473FCD21CCEA /* Foundation.framework in Frameworks */,
+				174DA3734A5B83ECA4A415101C9A3432 /* SocketRocket.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F14910998871D2BE531D93328BC2385 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				459C8BFCA246EB732075CDB70374D1B0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6EC657AC5A7BEE9A3D288B582F4C5E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C5B367942708E41EF8AF8B49ADCC665 /* Foundation.framework in Frameworks */,
+				11FC01FD489120C46343BCA1B0CBD1D4 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF2384AF99BD5ACE64F374B2D719E546 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A9E3D1BD20F2B7DDA24E4DE9A8F7091 /* CFNetwork.framework in Frameworks */,
+				C0C6DC390E4199B67062665CF0C45092 /* Foundation.framework in Frameworks */,
+				B602474FDB011E75853C1783F7C06645 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A79978F4398E1F278C3C18C21E1217A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BBF4347E61DB20436D77B1F565A8C420 /* Pods-WebRtcRoomIOS */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		241B51F1A500BD3CA8D25502C45398FF /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				B6E6DEDE4D9ECF3F5364DC598E71FCE4 /* MASCompositeConstraint.h */,
+				0AA16F965470F9D604D0DA62A66ECAF3 /* MASCompositeConstraint.m */,
+				25CD9F0904EE576EFA40B98B41934D90 /* MASConstraint.h */,
+				CE00477C11971D8979DFE240D0F140DB /* MASConstraint.m */,
+				442283B0061E8188C690AF5D42F77FB1 /* MASConstraint+Private.h */,
+				ADD09949872A26B9C80F70D649B98B49 /* MASConstraintMaker.h */,
+				7D133553CB44BBAD689C9C0BBBFA9366 /* MASConstraintMaker.m */,
+				5C9ED44A92D62586D41F7BB29977C44C /* MASLayoutConstraint.h */,
+				2222E802C7EADEE10EAA70DE8143382C /* MASLayoutConstraint.m */,
+				AF5FD76BBF8CD946E9AE9202BE7E18C0 /* Masonry.h */,
+				E6D2EF45A4C14EA1A86C1536CC7F2CA3 /* MASUtilities.h */,
+				49EE1827A2D4094D993089A1C0700F72 /* MASViewAttribute.h */,
+				4A1072F3ECACD0DBB48A83A1A8FBA626 /* MASViewAttribute.m */,
+				30A8A5F3FB280FDAAFB2527F74ADE1E1 /* MASViewConstraint.h */,
+				D51717CB48723E81F9B8E7B6126CAE6A /* MASViewConstraint.m */,
+				E43AD9D9ADE88F6980FEDF2A4D40C9BB /* NSArray+MASAdditions.h */,
+				B0916726C00F0D837D14484F160B2687 /* NSArray+MASAdditions.m */,
+				95FA1052C2C7D031671079BA5FDED5B1 /* NSArray+MASShorthandAdditions.h */,
+				669C714BB1CB35F835C47727FA178628 /* NSLayoutConstraint+MASDebugAdditions.h */,
+				74FBFE61B10F35129BD1EB330C3A20AC /* NSLayoutConstraint+MASDebugAdditions.m */,
+				1E487DC16E8AB2D79482D7CBE3CACB18 /* View+MASAdditions.h */,
+				588562FBE2E995D95003333E47F17ED3 /* View+MASAdditions.m */,
+				2ADE7E3107D8B8B63BBE7D64651AB151 /* View+MASShorthandAdditions.h */,
+				29EE6CC7534DCF7FCEDF585641E8C64B /* ViewController+MASAdditions.h */,
+				56FC4A3B0ABD0558BD62A1248E00437D /* ViewController+MASAdditions.m */,
+				746177F47B2FDEF611B814DE75864FFC /* Support Files */,
+			);
+			name = Masonry;
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		4EAB62F0C15665EA2ED545E4AB0FFFFE /* socket.IO */ = {
+			isa = PBXGroup;
+			children = (
+				9AD4158E0C27A3A1DBF54D3B423B5C03 /* SocketIO.h */,
+				378464B30B6640D5C4038F9427FE0291 /* SocketIO.m */,
+				44D5A7DC5ABC0DB9802644CE97074402 /* SocketIOJSONSerialization.h */,
+				D9005632CFFDCC47C1F0B752CCA91C81 /* SocketIOJSONSerialization.m */,
+				477D69D12A0742DE27474D053CB00AEE /* SocketIOPacket.h */,
+				25E6A466150F24E00FDD86D791FA1713 /* SocketIOPacket.m */,
+				FEDED2F5311BADB97D9DBDBA81A84346 /* SocketIOTransport.h */,
+				B0B0E80F09703370AA8FF2C16662A2B8 /* SocketIOTransportWebsocket.h */,
+				1EAD26334E52C9737237EC84CB5978DE /* SocketIOTransportWebsocket.m */,
+				9FB2FF0763A2CC1B8E84842C95B14941 /* SocketIOTransportXHR.h */,
+				96A65B9B15870DF4C010D964D3378051 /* SocketIOTransportXHR.m */,
+				D9F2A7F86E6A27C28CF7B21FB894221C /* Support Files */,
+			);
+			name = socket.IO;
+			path = socket.IO;
+			sourceTree = "<group>";
+		};
+		5D90238340BBF22AAB8047D35E316B13 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E955BE2D1C1185A4C2A3AE19CA14CC35 /* GoogleWebRTC */,
+				241B51F1A500BD3CA8D25502C45398FF /* Masonry */,
+				4EAB62F0C15665EA2ED545E4AB0FFFFE /* socket.IO */,
+				64AFEE0DAFCC1CB95CD029BAA9CEB89E /* SocketRocket */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		64AFEE0DAFCC1CB95CD029BAA9CEB89E /* SocketRocket */ = {
+			isa = PBXGroup;
+			children = (
+				572524641512FC0F521CAA9586E25A7D /* SocketRocket.h */,
+				BB9737746BC0F2B57D73C8494E2B7895 /* SRWebSocket.h */,
+				942F1CFDE96D61B091066714892A17EB /* SRWebSocket.m */,
+				FFBACDDEF43D0AF7A1459A9BA1FC7A39 /* Support Files */,
+			);
+			name = SocketRocket;
+			path = SocketRocket;
+			sourceTree = "<group>";
+		};
+		6EC45FBDEC21E2EA4384B2EF34A4672A /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				510EBA6C2450B79F930EA10A8FF0F689 /* CFNetwork.framework */,
+				17CE9E24CA9CBBEBA1A82EC7F0B9B77D /* Foundation.framework */,
+				520030D80E46EFCF4FD5076352EFED37 /* Security.framework */,
+				C89B751AB36830542419DFBBB257C61A /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		746177F47B2FDEF611B814DE75864FFC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0CD891AD280ABD2DB47567C454B535B3 /* Info.plist */,
+				1E82E65A08A8188AA20A32E50C1CD74A /* Masonry.modulemap */,
+				1A7C528F4541133AE242B564D2667AF0 /* Masonry.xcconfig */,
+				D479AEF44BD5D28959AAAE79D7DE8F94 /* Masonry-dummy.m */,
+				0E0D8BFAC276DC547B9DFFC5998F2AF7 /* Masonry-prefix.pch */,
+				9BEF5565BC5C46D34414985BD7E89B52 /* Masonry-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Masonry";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				F76E571B98D9047062CC36587B6C3E2C /* Frameworks */,
+				5D90238340BBF22AAB8047D35E316B13 /* Pods */,
+				7EBE2CC892EDA2B675806E416028FE89 /* Products */,
+				1A79978F4398E1F278C3C18C21E1217A /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7EBE2CC892EDA2B675806E416028FE89 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				598D0E086F9877445336407966ADDE61 /* Masonry.framework */,
+				02284032C75966ACA1317E5F45AA29B1 /* Pods_WebRtcRoomIOS.framework */,
+				2194B6F06322BC74620D3556BC7A9648 /* socket_IO.framework */,
+				BE873C42097A39C5CAB8101350263601 /* SocketRocket.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A9A997BDD378A8AEB27A14B252CBF03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D71E9410050145A5CF158782D7CAF32D /* WebRTC.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BBF4347E61DB20436D77B1F565A8C420 /* Pods-WebRtcRoomIOS */ = {
+			isa = PBXGroup;
+			children = (
+				D8CAAFA43D7C47132F900B12FFBE2065 /* Info.plist */,
+				0BE5816EE02C8D29E516ED552292EDBB /* Pods-WebRtcRoomIOS.modulemap */,
+				B4D1463F62968C27A797A5156EAD58C5 /* Pods-WebRtcRoomIOS-acknowledgements.markdown */,
+				5910A60B3D360535FF468412B9AF5637 /* Pods-WebRtcRoomIOS-acknowledgements.plist */,
+				8FD0CBD7CB2E0D7D9D3ED51A02EA8C69 /* Pods-WebRtcRoomIOS-dummy.m */,
+				720C27414544A4EB55BF0A3E8A4C441C /* Pods-WebRtcRoomIOS-frameworks.sh */,
+				5BD703481CAFD0686DF5D97ACB382AE4 /* Pods-WebRtcRoomIOS-resources.sh */,
+				A4E00671D3DD2C47DB22AA1EB012216E /* Pods-WebRtcRoomIOS-umbrella.h */,
+				46FBEB9EAB1EEEF1ADF5A514B736E424 /* Pods-WebRtcRoomIOS.debug.xcconfig */,
+				0308ABFDCC3387F3B1EBF11AEE014E4C /* Pods-WebRtcRoomIOS.release.xcconfig */,
+			);
+			name = "Pods-WebRtcRoomIOS";
+			path = "Target Support Files/Pods-WebRtcRoomIOS";
+			sourceTree = "<group>";
+		};
+		D9F2A7F86E6A27C28CF7B21FB894221C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B805EDB34DDD93CE9A199838403E05F2 /* Info.plist */,
+				B50B2DD21E76307E84A0397344BD5CEE /* socket.IO.modulemap */,
+				0A7E4F0F664E12F959E1DB1C0BD2295F /* socket.IO.xcconfig */,
+				94F722302DA2D550246DF3756A0EC51E /* socket.IO-dummy.m */,
+				8549C0DB4A259C0C4E9F3AE56030A21A /* socket.IO-prefix.pch */,
+				93339CADB19572C7DD9C47EDA60282C5 /* socket.IO-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/socket.IO";
+			sourceTree = "<group>";
+		};
+		E955BE2D1C1185A4C2A3AE19CA14CC35 /* GoogleWebRTC */ = {
+			isa = PBXGroup;
+			children = (
+				9A9A997BDD378A8AEB27A14B252CBF03 /* Frameworks */,
+			);
+			name = GoogleWebRTC;
+			path = GoogleWebRTC;
+			sourceTree = "<group>";
+		};
+		F76E571B98D9047062CC36587B6C3E2C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				675F24B07ABF1530D81BC2ADEF84A00D /* SocketRocket.framework */,
+				6EC45FBDEC21E2EA4384B2EF34A4672A /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FFBACDDEF43D0AF7A1459A9BA1FC7A39 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DAD4F7380AE9439B508191CCFFD5990B /* Info.plist */,
+				3CB653E894D2F3C5A922EC09527472E7 /* SocketRocket.modulemap */,
+				3064EC825B919E97AE23D6681033C737 /* SocketRocket.xcconfig */,
+				09BF1A7C4E71727D954FF3443230CCB4 /* SocketRocket-dummy.m */,
+				0764B613F58AEEFF5578D31E8BD2C723 /* SocketRocket-prefix.pch */,
+				5B116A9BD17851F35453D4E07C086F62 /* SocketRocket-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SocketRocket";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0DE073798B3700D931B695DFFE3578D5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE3AEA066DD0DED153FF3AB1622011FA /* Pods-WebRtcRoomIOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		109A878A4FB60099FC0FC8C26C7512EF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0AB43967BA535202F14C7A614DD9BAF /* SocketRocket-umbrella.h in Headers */,
+				AE059848BB1F83CCC049D06842F0671F /* SocketRocket.h in Headers */,
+				F434E9625CA9BC8B5AE782AFEC7421EE /* SRWebSocket.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F8E0EF33613DF93D26E673279714141 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5087F45FF2254E7865A221E5DB3419BD /* socket.IO-umbrella.h in Headers */,
+				243E09A20681D1B04C750A1A997BC68D /* SocketIO.h in Headers */,
+				BD23E5BF25955076D78EC0A5A84CF953 /* SocketIOJSONSerialization.h in Headers */,
+				235B4C20315F041FE54777EBD05CF88D /* SocketIOPacket.h in Headers */,
+				CC121771B27E97292AC1EC218796CD4A /* SocketIOTransport.h in Headers */,
+				D1B5B92F1D6FFB00957E81AD09F45722 /* SocketIOTransportWebsocket.h in Headers */,
+				821A1B51E6BB03F4F4EF0FCDAFD2CF60 /* SocketIOTransportXHR.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3E9930C736C01D12F5733EFD1F0A948 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CD45B754192DE834B642975E85257AB /* MASCompositeConstraint.h in Headers */,
+				4D4F2050654580FE1F1D5F4F82CEDDB8 /* MASConstraint+Private.h in Headers */,
+				C8DF22EAFFC2F81B0426E2165AC93E44 /* MASConstraint.h in Headers */,
+				88DE7BAB1F4999A5F4B617F44E5FD1D3 /* MASConstraintMaker.h in Headers */,
+				7C17BEA6034027310D1D205DB2008CA5 /* MASLayoutConstraint.h in Headers */,
+				457ACF9150DCF9AF445B129CC9678FB6 /* Masonry-umbrella.h in Headers */,
+				CC8F9B4A1AC4E276EA8AA4C6F2BF3CD4 /* Masonry.h in Headers */,
+				04A7D6AADAB213CE7D26F8EAD2F87536 /* MASUtilities.h in Headers */,
+				636BBA734C1A17A734761D674FAE8800 /* MASViewAttribute.h in Headers */,
+				091D17D5D8F832D28546A72B788CF0AE /* MASViewConstraint.h in Headers */,
+				C0A16E00B4BC2D88A7833D5DAED62942 /* NSArray+MASAdditions.h in Headers */,
+				D8B1525CB3DFCBD8E5032680530413D9 /* NSArray+MASShorthandAdditions.h in Headers */,
+				0FDB2B4F75591851F0F119EAE70B3F63 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */,
+				068EF598E554EC57038ACFB89CC2C47A /* View+MASAdditions.h in Headers */,
+				B44383A3FA435C1E986942C817339302 /* View+MASShorthandAdditions.h in Headers */,
+				2854C9B1086758BD2B6681206B6759B4 /* ViewController+MASAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		76FB24CDDBE77115CBD482D1F3495E0A /* socket.IO */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B786045CACE0A18883DC72D3E4AA925 /* Build configuration list for PBXNativeTarget "socket.IO" */;
+			buildPhases = (
+				0BE430AF84AEAFFB1A5DD00A51D29132 /* Sources */,
+				41AC88BFF599A38810A511F767BDEAA6 /* Frameworks */,
+				2F8E0EF33613DF93D26E673279714141 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6BD90219AEAC64BE01641380ADC78761 /* PBXTargetDependency */,
+			);
+			name = socket.IO;
+			productName = socket.IO;
+			productReference = 2194B6F06322BC74620D3556BC7A9648 /* socket_IO.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7E22BF92AC310A81DA03BCC5E1E7241C /* Pods-WebRtcRoomIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7ED7BEE7F4BBA3E6309DE4A9BCA3F874 /* Build configuration list for PBXNativeTarget "Pods-WebRtcRoomIOS" */;
+			buildPhases = (
+				1550210E3DE32117B3CEC700A81BCD6A /* Sources */,
+				6F14910998871D2BE531D93328BC2385 /* Frameworks */,
+				0DE073798B3700D931B695DFFE3578D5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01316CCA05396A7458102592E71CB7E3 /* PBXTargetDependency */,
+				1AA6C1533A4B3052403A30CC8935305A /* PBXTargetDependency */,
+				F8C35C8837CD303B51391E61A71C60DF /* PBXTargetDependency */,
+			);
+			name = "Pods-WebRtcRoomIOS";
+			productName = "Pods-WebRtcRoomIOS";
+			productReference = 02284032C75966ACA1317E5F45AA29B1 /* Pods_WebRtcRoomIOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D52144DE9D7255DE912490FF5A806573 /* Masonry */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02D024184BD368B565F3B6257DF3C605 /* Build configuration list for PBXNativeTarget "Masonry" */;
+			buildPhases = (
+				00A62ED60FF8A98AB74C8F2CECD850BA /* Sources */,
+				F6EC657AC5A7BEE9A3D288B582F4C5E9 /* Frameworks */,
+				F3E9930C736C01D12F5733EFD1F0A948 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Masonry;
+			productName = Masonry;
+			productReference = 598D0E086F9877445336407966ADDE61 /* Masonry.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DEA75E280412409EABD5E33C0A87D052 /* SocketRocket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FA51B63AA72EE02F214A437F6E024A4 /* Build configuration list for PBXNativeTarget "SocketRocket" */;
+			buildPhases = (
+				BD8CFD66F0E5D8CDD7A617F0B2B12DD1 /* Sources */,
+				FF2384AF99BD5ACE64F374B2D719E546 /* Frameworks */,
+				109A878A4FB60099FC0FC8C26C7512EF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SocketRocket;
+			productName = SocketRocket;
+			productReference = BE873C42097A39C5CAB8101350263601 /* SocketRocket.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 7EBE2CC892EDA2B675806E416028FE89 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D52144DE9D7255DE912490FF5A806573 /* Masonry */,
+				7E22BF92AC310A81DA03BCC5E1E7241C /* Pods-WebRtcRoomIOS */,
+				76FB24CDDBE77115CBD482D1F3495E0A /* socket.IO */,
+				DEA75E280412409EABD5E33C0A87D052 /* SocketRocket */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00A62ED60FF8A98AB74C8F2CECD850BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53BDF81D0A52EA526D597A5C5B139D7F /* MASCompositeConstraint.m in Sources */,
+				59F81DE0305CC2AC448D2A3C6B3280A2 /* MASConstraint.m in Sources */,
+				73BBDACC22CCA36A6DAAA167AD780BAF /* MASConstraintMaker.m in Sources */,
+				6C23BBF56ED4DCC10CA1765A6736D1F8 /* MASLayoutConstraint.m in Sources */,
+				A08A8AB356264E248D01F1BC0EF08166 /* Masonry-dummy.m in Sources */,
+				A7370CE9231F9A4927142D79021879EC /* MASViewAttribute.m in Sources */,
+				756DF24546C7D91459DCADC8F1C98660 /* MASViewConstraint.m in Sources */,
+				E72EDE323AC9F92EC8A00A93AC186093 /* NSArray+MASAdditions.m in Sources */,
+				0F3DF5C3BEFCC9838B53C37735B414BE /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				F4B3E44D5D2F6508BC1BB35A9FBDEC70 /* View+MASAdditions.m in Sources */,
+				8A6EEF68E7625AB66A3A8DED1594F88F /* ViewController+MASAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BE430AF84AEAFFB1A5DD00A51D29132 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00E7D97B87F01328ADFF1BA0B91FB589 /* socket.IO-dummy.m in Sources */,
+				2A17CA78B2C339C880047DF802234CED /* SocketIO.m in Sources */,
+				A2ABBB3F946AD7FC92C0FC145C0B0E5D /* SocketIOJSONSerialization.m in Sources */,
+				1B7D0DF96DD2CF9B02E9CF52F4E4E840 /* SocketIOPacket.m in Sources */,
+				0F6CE1F85BE7F5D3B53DCA9117F57D6B /* SocketIOTransportWebsocket.m in Sources */,
+				AFC6F870EB9FC6AB19DEC10C6C5D742B /* SocketIOTransportXHR.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1550210E3DE32117B3CEC700A81BCD6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C60FB7A80750CC6BD4C21DC023982C5C /* Pods-WebRtcRoomIOS-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD8CFD66F0E5D8CDD7A617F0B2B12DD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A11E0CAD1E4D5E44E2CA1EDB54EC3B2E /* SocketRocket-dummy.m in Sources */,
+				C7C59A4FFF2CE3EAD950649ECB9E317F /* SRWebSocket.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		01316CCA05396A7458102592E71CB7E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Masonry;
+			target = D52144DE9D7255DE912490FF5A806573 /* Masonry */;
+			targetProxy = 82B32318C9359CAD9CE8DC90DEED1C43 /* PBXContainerItemProxy */;
+		};
+		1AA6C1533A4B3052403A30CC8935305A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SocketRocket;
+			target = DEA75E280412409EABD5E33C0A87D052 /* SocketRocket */;
+			targetProxy = 2DE87E52699CA3129D6B94517ECBA6C9 /* PBXContainerItemProxy */;
+		};
+		6BD90219AEAC64BE01641380ADC78761 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SocketRocket;
+			target = DEA75E280412409EABD5E33C0A87D052 /* SocketRocket */;
+			targetProxy = F2B6439A7560B07D0EA44B3DC9680D12 /* PBXContainerItemProxy */;
+		};
+		F8C35C8837CD303B51391E61A71C60DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = socket.IO;
+			target = 76FB24CDDBE77115CBD482D1F3495E0A /* socket.IO */;
+			targetProxy = 994E5336630A078943704AA713CA63D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		199D972A13F2B4C56847F7A89CCA83BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		3845069A573E47CF21533487C497A730 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A7C528F4541133AE242B564D2667AF0 /* Masonry.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Masonry/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
+				PRODUCT_MODULE_NAME = Masonry;
+				PRODUCT_NAME = Masonry;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		390CCEFCDED7342A2204D5F1D905A630 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3064EC825B919E97AE23D6681033C737 /* SocketRocket.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SocketRocket/SocketRocket-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SocketRocket/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SocketRocket/SocketRocket.modulemap";
+				PRODUCT_MODULE_NAME = SocketRocket;
+				PRODUCT_NAME = SocketRocket;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4201D773A3872FEDDF773A623DCD4302 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46FBEB9EAB1EEEF1ADF5A514B736E424 /* Pods-WebRtcRoomIOS.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-WebRtcRoomIOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WebRtcRoomIOS/Pods-WebRtcRoomIOS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		44587FB344F987686200AA49063C56C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3064EC825B919E97AE23D6681033C737 /* SocketRocket.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SocketRocket/SocketRocket-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SocketRocket/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SocketRocket/SocketRocket.modulemap";
+				PRODUCT_MODULE_NAME = SocketRocket;
+				PRODUCT_NAME = SocketRocket;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C71F095AFA29FE5B31C6784D5D3DB0A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A7E4F0F664E12F959E1DB1C0BD2295F /* socket.IO.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/socket.IO/socket.IO-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/socket.IO/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/socket.IO/socket.IO.modulemap";
+				PRODUCT_MODULE_NAME = socket_IO;
+				PRODUCT_NAME = socket_IO;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E2CA43792379B77DB39A1FFCE83BFDA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A7E4F0F664E12F959E1DB1C0BD2295F /* socket.IO.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/socket.IO/socket.IO-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/socket.IO/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/socket.IO/socket.IO.modulemap";
+				PRODUCT_MODULE_NAME = socket_IO;
+				PRODUCT_NAME = socket_IO;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EAFD37544496ADCDE9CFF54264A0F4F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0308ABFDCC3387F3B1EBF11AEE014E4C /* Pods-WebRtcRoomIOS.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-WebRtcRoomIOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WebRtcRoomIOS/Pods-WebRtcRoomIOS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FDB2FC4A1E5891381CD9D922145497F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		FE3EC76958EB417BB5A9577967FD1019 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A7C528F4541133AE242B564D2667AF0 /* Masonry.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Masonry/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
+				PRODUCT_MODULE_NAME = Masonry;
+				PRODUCT_NAME = Masonry;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		02D024184BD368B565F3B6257DF3C605 /* Build configuration list for PBXNativeTarget "Masonry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3845069A573E47CF21533487C497A730 /* Debug */,
+				FE3EC76958EB417BB5A9577967FD1019 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B786045CACE0A18883DC72D3E4AA925 /* Build configuration list for PBXNativeTarget "socket.IO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C71F095AFA29FE5B31C6784D5D3DB0A6 /* Debug */,
+				E2CA43792379B77DB39A1FFCE83BFDA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				199D972A13F2B4C56847F7A89CCA83BC /* Debug */,
+				FDB2FC4A1E5891381CD9D922145497F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FA51B63AA72EE02F214A437F6E024A4 /* Build configuration list for PBXNativeTarget "SocketRocket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				390CCEFCDED7342A2204D5F1D905A630 /* Debug */,
+				44587FB344F987686200AA49063C56C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7ED7BEE7F4BBA3E6309DE4A9BCA3F874 /* Build configuration list for PBXNativeTarget "Pods-WebRtcRoomIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4201D773A3872FEDDF773A623DCD4302 /* Debug */,
+				EAFD37544496ADCDE9CFF54264A0F4F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
