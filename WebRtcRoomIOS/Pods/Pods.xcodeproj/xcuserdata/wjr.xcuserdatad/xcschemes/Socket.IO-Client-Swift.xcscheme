@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "217AB7610976E475BCD67668FB73DF78"
-               BuildableName = "Pods_WebRtcRoomIOS.framework"
-               BlueprintName = "Pods-WebRtcRoomIOS"
+               BlueprintIdentifier = "7C9B4D2AD78FB93C57498A2A3562609E"
+               BuildableName = "SocketIO.framework"
+               BlueprintName = "Socket.IO-Client-Swift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "217AB7610976E475BCD67668FB73DF78"
-            BuildableName = "Pods_WebRtcRoomIOS.framework"
-            BlueprintName = "Pods-WebRtcRoomIOS"
+            BlueprintIdentifier = "7C9B4D2AD78FB93C57498A2A3562609E"
+            BuildableName = "SocketIO.framework"
+            BlueprintName = "Socket.IO-Client-Swift"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

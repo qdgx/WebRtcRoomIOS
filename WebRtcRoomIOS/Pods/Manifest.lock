@@ -1,28 +1,28 @@
 PODS:
   - GoogleWebRTC (1.1.25102)
   - Masonry (1.1.0)
-  - socket.IO (0.5.2):
-    - SocketRocket (~> 0.2)
-  - SocketRocket (0.5.1)
+  - Socket.IO-Client-Swift (13.3.1):
+    - Starscream (~> 3.0.2)
+  - Starscream (3.0.6)
 
 DEPENDENCIES:
   - GoogleWebRTC (~> 1.1.25102)
   - Masonry (~> 1.1.0)
-  - socket.IO (~> 0.5.2)
+  - Socket.IO-Client-Swift (~> 13.3.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - GoogleWebRTC
     - Masonry
-    - socket.IO
-    - SocketRocket
+    - Socket.IO-Client-Swift
+    - Starscream
 
 SPEC CHECKSUMS:
   GoogleWebRTC: 5cd390bc24c272fb7ca2b8765e4a7578a770b279
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  socket.IO: eaaaea33481d8a81d8f78e331f0c72ba44758036
-  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+  Socket.IO-Client-Swift: 79f8f85fa44881838175a20f9bd2c32bef2c9d37
+  Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
 
-PODFILE CHECKSUM: de1a58913f2464fcbc19af7c12e0d8ed850bf66b
+PODFILE CHECKSUM: efd5edf56d8bbbfc8fdd14381e867e1175599cb4
 
 COCOAPODS: 1.5.3

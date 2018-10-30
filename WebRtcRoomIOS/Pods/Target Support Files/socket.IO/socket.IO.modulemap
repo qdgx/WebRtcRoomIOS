@@ -1,6 +1,0 @@
-framework module socket_IO {
-  umbrella header "socket.IO-umbrella.h"
-
-  export *
-  module * { export * }
-}

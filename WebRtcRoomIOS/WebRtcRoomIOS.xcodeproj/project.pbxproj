@@ -13,6 +13,8 @@
 		73C4D43F2187EBD300CFC906 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73C4D43E2187EBD300CFC906 /* Assets.xcassets */; };
 		73C4D4422187EBD300CFC906 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73C4D4402187EBD300CFC906 /* LaunchScreen.storyboard */; };
 		73C4D4452187EBD300CFC906 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C4D4442187EBD300CFC906 /* main.m */; };
+		73C4D44E2187F1FC00CFC906 /* SignalingInteractionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C4D44D2187F1FC00CFC906 /* SignalingInteractionManager.m */; };
+		73C4D4562188261900CFC906 /* WebRtcManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C4D4552188261900CFC906 /* WebRtcManager.m */; };
 		93CF8FA909F7F751B40A3E23 /* Pods_WebRtcRoomIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC429E8F4C51BBCC1047C6A4 /* Pods_WebRtcRoomIOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,10 @@
 		73C4D4412187EBD300CFC906 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		73C4D4432187EBD300CFC906 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73C4D4442187EBD300CFC906 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		73C4D44C2187F1FC00CFC906 /* SignalingInteractionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalingInteractionManager.h; sourceTree = "<group>"; };
+		73C4D44D2187F1FC00CFC906 /* SignalingInteractionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignalingInteractionManager.m; sourceTree = "<group>"; };
+		73C4D4542188261900CFC906 /* WebRtcManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebRtcManager.h; sourceTree = "<group>"; };
+		73C4D4552188261900CFC906 /* WebRtcManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebRtcManager.m; sourceTree = "<group>"; };
 		73F9CB4BF735DA41EFD219FD /* Pods-WebRtcRoomIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebRtcRoomIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebRtcRoomIOS/Pods-WebRtcRoomIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		DC429E8F4C51BBCC1047C6A4 /* Pods_WebRtcRoomIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebRtcRoomIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC79602FD47D3F0767F3DB36 /* Pods-WebRtcRoomIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebRtcRoomIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-WebRtcRoomIOS/Pods-WebRtcRoomIOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +80,7 @@
 		73C4D4342187EBD300CFC906 /* WebRtcRoomIOS */ = {
 			isa = PBXGroup;
 			children = (
+				73C4D44B2187F1DA00CFC906 /* WebRtcRoom */,
 				73C4D4352187EBD300CFC906 /* AppDelegate.h */,
 				73C4D4362187EBD300CFC906 /* AppDelegate.m */,
 				73C4D4382187EBD300CFC906 /* ViewController.h */,
@@ -85,6 +92,17 @@
 				73C4D4442187EBD300CFC906 /* main.m */,
 			);
 			path = WebRtcRoomIOS;
+			sourceTree = "<group>";
+		};
+		73C4D44B2187F1DA00CFC906 /* WebRtcRoom */ = {
+			isa = PBXGroup;
+			children = (
+				73C4D44C2187F1FC00CFC906 /* SignalingInteractionManager.h */,
+				73C4D44D2187F1FC00CFC906 /* SignalingInteractionManager.m */,
+				73C4D4542188261900CFC906 /* WebRtcManager.h */,
+				73C4D4552188261900CFC906 /* WebRtcManager.m */,
+			);
+			path = WebRtcRoom;
 			sourceTree = "<group>";
 		};
 		D72CFC3DB1E5519832CB41B2 /* Frameworks */ = {
@@ -172,15 +190,15 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-WebRtcRoomIOS/Pods-WebRtcRoomIOS-frameworks.sh",
 				"${PODS_ROOT}/GoogleWebRTC/Frameworks/frameworks/WebRTC.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
-				"${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework",
-				"${BUILT_PRODUCTS_DIR}/socket.IO/socket_IO.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebRTC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/socket_IO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -215,6 +233,8 @@
 				73C4D43A2187EBD300CFC906 /* ViewController.m in Sources */,
 				73C4D4452187EBD300CFC906 /* main.m in Sources */,
 				73C4D4372187EBD300CFC906 /* AppDelegate.m in Sources */,
+				73C4D4562188261900CFC906 /* WebRtcManager.m in Sources */,
+				73C4D44E2187F1FC00CFC906 /* SignalingInteractionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +378,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WebRtcRoomIOS;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = WebRtcRoomIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -366,7 +387,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = WebRtcRoomIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = WebRtcRoomIOS;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -378,6 +399,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = WebRtcRoomIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
