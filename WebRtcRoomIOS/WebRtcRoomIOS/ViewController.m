@@ -18,6 +18,9 @@
 @property(nonatomic,strong) UITextField* roomIDTextField;
 @property(nonatomic,strong) UIButton* joinRoomBtn;
 @property(nonatomic,strong) UIButton* exitRoomBtn;
+@property(nonatomic,strong) UIButton* cameraBtn;
+@property(nonatomic,strong) UIButton* switchCameraBtn;
+@property(nonatomic,assign) BOOL isFontCamera;
 
 @property(nonatomic,copy) NSString* userID;
 @property(nonatomic,strong) NSArray<NSString*>* users;
@@ -36,6 +39,7 @@
     [SignalingInteractionManager getInstance].dataBlock = ^(NSString *eventName, NSDictionary *data) {
         [weakSelf handleSignaling:eventName data:data];
     };
+    self.isFontCamera = YES;
     self.views = [[NSMutableArray alloc] init];
     [WebRtcManager getInstance].delegate = self;
 }
@@ -60,6 +64,18 @@
     [self.exitRoomBtn setTitle:@"退出房间" forState:UIControlStateNormal];
     self.exitRoomBtn.backgroundColor = [UIColor colorWithRed:170.0f/255.0f green:170.0f/255.0f blue:170.0f/255.0f alpha:1.0];
     [self.view addSubview:self.exitRoomBtn];
+    
+    self.cameraBtn = [[UIButton alloc] initWithFrame:CGRectZero];
+    [self.cameraBtn addTarget:self action:@selector(openCamera) forControlEvents:UIControlEventTouchUpInside];
+    [self.cameraBtn setTitle:@"开启摄像头" forState:UIControlStateNormal];
+    self.cameraBtn.backgroundColor = [UIColor colorWithRed:170.0f/255.0f green:170.0f/255.0f blue:170.0f/255.0f alpha:1.0];
+    [self.view addSubview:self.cameraBtn];
+    
+    self.switchCameraBtn = [[UIButton alloc] initWithFrame:CGRectZero];
+    [self.switchCameraBtn addTarget:self action:@selector(switchCamera) forControlEvents:UIControlEventTouchUpInside];
+    [self.switchCameraBtn setTitle:@"切换摄像头" forState:UIControlStateNormal];
+    self.switchCameraBtn.backgroundColor = [UIColor colorWithRed:170.0f/255.0f green:170.0f/255.0f blue:170.0f/255.0f alpha:1.0];
+    [self.view addSubview:self.switchCameraBtn];
     
     self.tipLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     self.tipLabel.numberOfLines = 0;
@@ -88,10 +104,28 @@
         make.left.mas_equalTo(self.joinRoomBtn.mas_right).mas_offset(5);
         make.size.mas_equalTo(CGSizeMake(width, 40));
     }];
+    
+    [self.cameraBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.tipLabel.mas_bottom).mas_offset(5);
+        make.left.mas_equalTo(self.exitRoomBtn.mas_right).mas_offset(5);
+        make.size.mas_equalTo(CGSizeMake(width, 40));
+    }];
+    
+    [self.switchCameraBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.joinRoomBtn.mas_bottom).mas_offset(5);
+        make.left.mas_equalTo(5);
+        make.size.mas_equalTo(CGSizeMake(width, 40));
+    }];
 }
 
 -(void)joinRoom
 {
+    if (![[WebRtcManager getInstance] isOpenCamera])
+    {
+        self.tipLabel.text = @"先开启摄像头";
+        return;
+    }
+    
     [[SignalingInteractionManager getInstance] createAndJoinRoom:self.roomIDTextField.text];
 }
 
@@ -105,6 +139,39 @@
         [view removeFromSuperview];
     }
     [self.views removeAllObjects];
+}
+-(void)openCamera
+{
+    if ([[WebRtcManager getInstance] isOpenCamera])
+    {
+        [self.cameraBtn setTitle:@"开启摄像头" forState:UIControlStateNormal];
+        [[WebRtcManager getInstance] closeCamra];
+    }
+    else
+    {
+        [self.cameraBtn setTitle:@"关闭摄像头" forState:UIControlStateNormal];
+        [[WebRtcManager getInstance] openCamera];
+    }
+}
+
+-(void)switchCamera
+{
+    if (![[WebRtcManager getInstance] isOpenCamera])
+    {
+        self.tipLabel.text = @"先开启摄像头";
+        return;
+    }
+    
+    if (self.isFontCamera)
+    {
+        [[WebRtcManager getInstance] switchBackCamera];
+        self.isFontCamera = NO;
+    }
+    else
+    {
+        [[WebRtcManager getInstance] switchFrontCamera];
+        self.isFontCamera = YES;
+    }
 }
 
 -(void)handleSignaling:(NSString*)eventName data:(NSDictionary*)data
@@ -215,7 +282,7 @@
 -(void)layoutVideoView
 {
     float x = 0;
-    float y = 200;
+    float y = 250;
     float width = self.view.bounds.size.width / 3;
     for (int i = 0; i < self.views.count; i++)
     {
@@ -230,12 +297,4 @@
     }
 }
 
-- (void)videoView:(id<RTCVideoRenderer>)videoView didChangeVideoSize:(CGSize)size
-{
-//    RTCEAGLVideoView* view = (RTCEAGLVideoView*)videoView;
-//    CGRect rect = view.frame;
-//    rect.size.width = size.width;
-//    rect.size.height = size.height;
-//    [view setFrame:rect];
-}
 @end

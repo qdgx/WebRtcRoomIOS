@@ -64,6 +64,11 @@ typedef NS_ENUM(NSInteger,PeerConnectionType)
 -(void)joined:(NSString*)idString room:(NSString*)room;
 -(void)offer:(NSString*)from to:(NSString*)to room:(NSString*)room sdp:(NSString*)sdp;
 -(void)close;
+-(BOOL)isOpenCamera;
+-(void)openCamera;
+-(void)closeCamra;
+-(void)switchFrontCamera;
+-(void)switchBackCamera;
 @end
 
 NS_ASSUME_NONNULL_END

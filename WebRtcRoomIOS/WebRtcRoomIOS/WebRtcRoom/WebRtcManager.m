@@ -21,6 +21,11 @@ static NSString *const RTCSTUNServerURL3 = @"stun:stun.l.google.com:19302";
 @property(nonatomic,strong) NSMutableArray* iceServers;
 @property(nonatomic,strong) RTCMediaStream* localStream;
 @property(nonatomic,strong) RTCCameraVideoCapturer* capturer;
+@property(nonatomic,assign) BOOL isCameraOpened;
+@property(nonatomic,strong) RTCAudioTrack* localAudioTrack;
+@property(nonatomic,strong) RTCVideoTrack* localVideoTrack;
+@property(nonatomic,assign) BOOL isFrontCamera;
+
 @end
 
 @implementation WebRtcPeerConnectionInfo
@@ -46,6 +51,8 @@ static NSString *const RTCSTUNServerURL3 = @"stun:stun.l.google.com:19302";
         self.users = [[NSMutableArray alloc] init];
         self.peerConnectionFactory = nil;
         self.iceServers = nil;
+        self.isCameraOpened = NO;
+        self.isFrontCamera = YES;
     }
     return self;
 }
@@ -67,7 +74,7 @@ static NSString *const RTCSTUNServerURL3 = @"stun:stun.l.google.com:19302";
     userInfo.userID = userId;
     userInfo.peerConnection = [self createPeerConnection:userId];
     [self.users addObject:userInfo];
-    [self createLocalStream];
+    [self initLocalStream];
     [userInfo.peerConnection addStream:self.localStream];
     [self createDataChannel:userInfo];
     [self createOffer:userInfo];
@@ -148,7 +155,7 @@ static NSString *const RTCSTUNServerURL3 = @"stun:stun.l.google.com:19302";
     userInfo.userID = from;
     userInfo.peerConnection = [self createPeerConnection:from];
     [self.users addObject:userInfo];
-    [self createLocalStream];
+    [self initLocalStream];
     [userInfo.peerConnection addStream:self.localStream];
     [self createDataChannel:userInfo];
     
@@ -195,22 +202,135 @@ static NSString *const RTCSTUNServerURL3 = @"stun:stun.l.google.com:19302";
     return constraints;
 }
 
-- (void)createLocalStream
+-(BOOL)isOpenCamera
 {
+    return self.isCameraOpened;
+}
+-(void)openCamera
+{
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (weakSelf.localStream == nil)
+        {
+            [weakSelf initLocalStream];
+            [weakSelf openCamera:self.isFrontCamera];
+        }
+        else
+        {
+            //视频
+            if (!weakSelf.isCameraOpened)
+            {
+                [weakSelf openCamera:self.isFrontCamera];
+            }
+        }
+        if ([weakSelf.delegate respondsToSelector:@selector(rtcSetLocalStream:)])
+        {
+            LOGINFO(@"本地视频Stream");
+            [weakSelf.delegate rtcSetLocalStream:weakSelf.localStream];
+        }
+    });
+    
+    
+}
+-(void)closeCamra
+{
+    if(self.capturer != nil)
+    {
+        [self.capturer stopCapture];
+    }
+    self.isCameraOpened = NO;
     if (self.localStream != nil)
     {
-        return;
+        if ([self.delegate respondsToSelector:@selector(rtcRemoveStream:)])
+        {
+            [self.delegate rtcRemoveStream:self.localStream];
+        }
     }
+}
+
+-(void)openCamera:(BOOL)isFront
+{
+    if (isFront)
+    {
+        [self switchFrontCamera];
+    }
+    else
+    {
+        [self switchBackCamera];
+    }
+}
+
+-(void)switchFrontCamera
+{
+    if (self.localStream == nil)
+        return;
+    
+    self.isFrontCamera = YES;
+    NSArray *deviceArray = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+    AVCaptureDevice *device = nil;
+    for (AVCaptureDevice* dev in deviceArray )
+    {
+        if (dev.position == AVCaptureDevicePositionFront)
+        {
+            device = dev;
+            break;
+        }
+    }
+    AVCaptureDeviceFormat* format = device.activeFormat;
+    [self.capturer stopCapture];
+    [self.capturer startCaptureWithDevice:device format:format fps:30 completionHandler:^(NSError * _Nonnull error)
+    {
+        if (!error)
+        {
+            self.isCameraOpened = YES;
+        }
+    }];
+}
+-(void)switchBackCamera
+{
+    if (self.localStream == nil)
+        return;
+    
+    self.isFrontCamera = NO;
+    NSArray *deviceArray = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+    AVCaptureDevice *device = nil;
+    for (AVCaptureDevice* dev in deviceArray )
+    {
+        if (dev.position == AVCaptureDevicePositionBack)
+        {
+            device = dev;
+            break;
+        }
+    }
+    AVCaptureDeviceFormat* format = device.activeFormat;
+    [self.capturer stopCapture];
+    [self.capturer startCaptureWithDevice:device format:format fps:30 completionHandler:^(NSError * _Nonnull error)
+    {
+        if (!error)
+        {
+            self.isCameraOpened = YES;
+        }
+    }];
+}
+
+-(void)initLocalStream
+{
+    if (self.localStream != nil)
+        return;
+    
+   
+    //先初始化工厂
+    if (!self.peerConnectionFactory)
+        self.peerConnectionFactory = [[RTCPeerConnectionFactory alloc] init];
+    
+    __weak typeof(self) weakSelf = self;
     self.localStream = [self.peerConnectionFactory mediaStreamWithStreamId:@"ARDAMS"];
     
     //音频
-    RTCAudioTrack *audioTrack = [self.peerConnectionFactory audioTrackWithTrackId:@"ARDAMSa0"];
-    [self.localStream addAudioTrack:audioTrack];
+    self.localAudioTrack = [self.peerConnectionFactory audioTrackWithTrackId:@"ARDAMSa0"];
+    [self.localStream addAudioTrack:self.localAudioTrack];
     
     //视频
-    NSArray *deviceArray = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
-    AVCaptureDevice *device = [deviceArray lastObject];
-    //检测摄像头权限
     AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
     if(authStatus == AVAuthorizationStatusRestricted || authStatus == AVAuthorizationStatusDenied)
     {
@@ -220,27 +340,11 @@ static NSString *const RTCSTUNServerURL3 = @"stun:stun.l.google.com:19302";
     }
     else
     {
-        if (device)
-        {
-            
-            RTCVideoSource *videoSource =  [self.peerConnectionFactory videoSource];
-            [videoSource adaptOutputFormatToWidth:205 height:205 fps:30];
-            self.capturer = [[RTCCameraVideoCapturer alloc] initWithDelegate:videoSource];
-            RTCVideoTrack *videoTrack = [self.peerConnectionFactory videoTrackWithSource:videoSource trackId:@"ARDAMSv0"];
-            [self.localStream addVideoTrack:videoTrack];
-            AVCaptureDeviceFormat* format = device.activeFormat;
-            [self.capturer startCaptureWithDevice:device format:format fps:30 completionHandler:^(NSError * _Nonnull error)
-             {
-                 //int wjr = 0;
-             }];
-            
-        }
-        else
-        {
-            NSLog(@"该设备不能打开摄像头");
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"该设备不能打开摄像头" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
-            [alertView show];
-        }
+        RTCVideoSource *videoSource =  [self.peerConnectionFactory videoSource];
+        [videoSource adaptOutputFormatToWidth:205 height:205 fps:30];
+        self.capturer = [[RTCCameraVideoCapturer alloc] initWithDelegate:videoSource];
+        self.localVideoTrack = [self.peerConnectionFactory videoTrackWithSource:videoSource trackId:@"ARDAMSv0"];
+        [self.localStream addVideoTrack:self.localVideoTrack];
     }
 }
 
