@@ -15,6 +15,7 @@
 		73C4D4452187EBD300CFC906 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C4D4442187EBD300CFC906 /* main.m */; };
 		73C4D44E2187F1FC00CFC906 /* SignalingInteractionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C4D44D2187F1FC00CFC906 /* SignalingInteractionManager.m */; };
 		73C4D4562188261900CFC906 /* WebRtcManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C4D4552188261900CFC906 /* WebRtcManager.m */; };
+		73EAEB6C218938ED00FDF002 /* VideoRendererView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EAEB6B218938ED00FDF002 /* VideoRendererView.m */; };
 		93CF8FA909F7F751B40A3E23 /* Pods_WebRtcRoomIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC429E8F4C51BBCC1047C6A4 /* Pods_WebRtcRoomIOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,8 @@
 		73C4D44D2187F1FC00CFC906 /* SignalingInteractionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignalingInteractionManager.m; sourceTree = "<group>"; };
 		73C4D4542188261900CFC906 /* WebRtcManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebRtcManager.h; sourceTree = "<group>"; };
 		73C4D4552188261900CFC906 /* WebRtcManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebRtcManager.m; sourceTree = "<group>"; };
+		73EAEB6A218938ED00FDF002 /* VideoRendererView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoRendererView.h; sourceTree = "<group>"; };
+		73EAEB6B218938ED00FDF002 /* VideoRendererView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoRendererView.m; sourceTree = "<group>"; };
 		73F9CB4BF735DA41EFD219FD /* Pods-WebRtcRoomIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebRtcRoomIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebRtcRoomIOS/Pods-WebRtcRoomIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		DC429E8F4C51BBCC1047C6A4 /* Pods_WebRtcRoomIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebRtcRoomIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC79602FD47D3F0767F3DB36 /* Pods-WebRtcRoomIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebRtcRoomIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-WebRtcRoomIOS/Pods-WebRtcRoomIOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +104,8 @@
 				73C4D44D2187F1FC00CFC906 /* SignalingInteractionManager.m */,
 				73C4D4542188261900CFC906 /* WebRtcManager.h */,
 				73C4D4552188261900CFC906 /* WebRtcManager.m */,
+				73EAEB6A218938ED00FDF002 /* VideoRendererView.h */,
+				73EAEB6B218938ED00FDF002 /* VideoRendererView.m */,
 			);
 			path = WebRtcRoom;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 				73C4D4372187EBD300CFC906 /* AppDelegate.m in Sources */,
 				73C4D4562188261900CFC906 /* WebRtcManager.m in Sources */,
 				73C4D44E2187F1FC00CFC906 /* SignalingInteractionManager.m in Sources */,
+				73EAEB6C218938ED00FDF002 /* VideoRendererView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
