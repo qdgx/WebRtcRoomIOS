@@ -63,6 +63,7 @@ static NSString *const RTCSTUNServerURL3 = @"stun:stun.l.google.com:19302";
 -(void)connectWithUserId:(NSString *)userId
 {
     WebRtcPeerConnectionInfo* userInfo = [[WebRtcPeerConnectionInfo alloc] init];
+    userInfo.peerType = PeerConnectionType_Caller;
     userInfo.userID = userId;
     userInfo.peerConnection = [self createPeerConnection:userId];
     [self.users addObject:userInfo];
@@ -128,6 +129,39 @@ static NSString *const RTCSTUNServerURL3 = @"stun:stun.l.google.com:19302";
     [user.peerConnection addIceCandidate:rtccandidate];
 }
 
+-(void)joined:(NSString*)idString room:(NSString*)room
+{
+    //[self connectWithUserId:idString];
+}
+-(void)offer:(NSString*)from to:(NSString*)to room:(NSString*)room sdp:(NSString*)sdp
+{
+    WebRtcPeerConnectionInfo* user = [self findUserById:from];
+    if (user != nil)
+    {
+        LOGINFO(@"找不到用户");
+        return;
+    }
+    
+    //根据类型和SDP 生成SDP描述对象
+    WebRtcPeerConnectionInfo* userInfo = [[WebRtcPeerConnectionInfo alloc] init];
+    userInfo.peerType = PeerConnectionType_Callee;
+    userInfo.userID = from;
+    userInfo.peerConnection = [self createPeerConnection:from];
+    [self.users addObject:userInfo];
+    [self createLocalStream];
+    [userInfo.peerConnection addStream:self.localStream];
+    [self createDataChannel:userInfo];
+    
+    RTCSessionDescription* remoteSdp = [[RTCSessionDescription alloc] initWithType:RTCSdpTypeOffer sdp:sdp];
+    
+    __weak RTCPeerConnection *peerConnection = userInfo.peerConnection;
+    __weak typeof(self) weakSelf = self;
+    [peerConnection setRemoteDescription:remoteSdp completionHandler:^(NSError * _Nullable error)
+    {
+        [weakSelf setSessionDescriptionWithPeerConnection:peerConnection];
+    }];
+}
+
 
 - (RTCPeerConnection*)createPeerConnection:(NSString *)connectionId
 {
@@ -163,6 +197,10 @@ static NSString *const RTCSTUNServerURL3 = @"stun:stun.l.google.com:19302";
 
 - (void)createLocalStream
 {
+    if (self.localStream != nil)
+    {
+        return;
+    }
     self.localStream = [self.peerConnectionFactory mediaStreamWithStreamId:@"ARDAMS"];
     
     //音频
@@ -221,7 +259,6 @@ static NSString *const RTCSTUNServerURL3 = @"stun:stun.l.google.com:19302";
 - (void)createOffer:(WebRtcPeerConnectionInfo*)userInfo
 {
     //给每一个点对点连接，都去创建offer
-    userInfo.peerType = PeerConnectionType_Caller;
     [userInfo.peerConnection offerForConstraints:[self creatAnswerOrOfferConstraint] completionHandler:^(RTCSessionDescription * _Nullable sdp, NSError * _Nullable error) {
         __weak RTCPeerConnection *peerConnection = userInfo.peerConnection;
         [userInfo.peerConnection setLocalDescription:sdp completionHandler:^(NSError * _Nullable error) {
@@ -283,7 +320,8 @@ static NSString *const RTCSTUNServerURL3 = @"stun:stun.l.google.com:19302";
     {
         if (user.peerType == PeerConnectionType_Callee)
         {
-           
+            LOGINFO(@"发送answer消息");
+            [[SignalingInteractionManager getInstance] answer:self.userid to:user.userID room:self.roomid sdp:user.peerConnection.localDescription.sdp];
         }
         else if(user.peerType == PeerConnectionType_Caller)
         {
@@ -295,6 +333,7 @@ static NSString *const RTCSTUNServerURL3 = @"stun:stun.l.google.com:19302";
     {
         if (user.peerType == PeerConnectionType_Callee)
         {
+            LOGINFO(@"发送answer消息");
             [[SignalingInteractionManager getInstance] answer:self.userid to:user.userID room:self.roomid sdp:user.peerConnection.localDescription.sdp];
         }
     }

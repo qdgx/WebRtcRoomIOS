@@ -10,6 +10,7 @@
 #import "SignalingInteractionManager.h"
 #import "WebRtcManager.h"
 #import <Masonry/Masonry.h>
+#import "VideoRendererView.h"
 
 
 @interface ViewController () <WebRtcManagerDelegate,RTCVideoViewDelegate>
@@ -20,7 +21,7 @@
 
 @property(nonatomic,copy) NSString* userID;
 @property(nonatomic,strong) NSArray<NSString*>* users;
-@property(nonatomic,strong) NSMutableArray<NSDictionary*>* viewInfos;
+@property(nonatomic,strong) NSMutableArray<VideoRendererView*>* views;
 @end
 
 @implementation ViewController
@@ -35,7 +36,7 @@
     [SignalingInteractionManager getInstance].dataBlock = ^(NSString *eventName, NSDictionary *data) {
         [weakSelf handleSignaling:eventName data:data];
     };
-    self.viewInfos = [[NSMutableArray alloc] init];
+    self.views = [[NSMutableArray alloc] init];
     [WebRtcManager getInstance].delegate = self;
 }
 
@@ -98,13 +99,12 @@
 {
     [[WebRtcManager getInstance] close];
     [[SignalingInteractionManager getInstance] exit:self.userID room:self.roomIDTextField.text];
-    for (int i = 0; i < self.viewInfos.count; i++)
+    for (int i = 0; i < self.views.count; i++)
     {
-        NSDictionary* dic = [self.viewInfos objectAtIndex:i];
-        RTCEAGLVideoView* view = [dic objectForKey:@"view"];
+        VideoRendererView* view = [self.views objectAtIndex:i];
         [view removeFromSuperview];
     }
-    [self.viewInfos removeAllObjects];
+    [self.views removeAllObjects];
 }
 
 -(void)handleSignaling:(NSString*)eventName data:(NSDictionary*)data
@@ -138,7 +138,7 @@
     }
     else if ([eventName isEqualToString:@"candidate"])
     {
-        LOGINFO(@"收到 candidate event");
+        //LOGINFO(@"收到 candidate event");
         NSString* from = [data objectForKey:@"from"];
         NSString* to = [data objectForKey:@"to"];
         NSDictionary* candidate = [data objectForKey:@"candidate"];
@@ -152,6 +152,22 @@
     {
         LOGINFO(@"收到 exit event");
     }
+    else if ([eventName isEqualToString:@"joined"])
+    {
+        NSString* idString = [data objectForKey:@"id"];
+        NSString* room = [data objectForKey:@"room"];
+        [[WebRtcManager getInstance] joined:idString room:room];
+    }
+    else if ([eventName isEqualToString:@"offer"])
+    {
+        LOGINFO(@"收到 offer event");
+        NSString* from = [data objectForKey:@"from"];
+        NSString* to = [data objectForKey:@"to"];
+        NSString* sdp = [data objectForKey:@"sdp"];
+        NSString* room = [data objectForKey:@"room"];
+        [[WebRtcManager getInstance] offer:from to:to room:room sdp:sdp];
+    }
+    
     
     
 }
@@ -159,42 +175,38 @@
 #pragma mark - WebRtcDelegate
 -(void)rtcSetLocalStream:(RTCMediaStream*)stream
 {
-    RTCEAGLVideoView* localVideoView = [[RTCEAGLVideoView alloc] initWithFrame:CGRectMake(0, 300, 100, 100)];
-    localVideoView.contentMode = UIViewContentModeScaleAspectFit;
-    localVideoView.delegate = self;
-    RTCVideoTrack* track = [stream.videoTracks lastObject];
-    [track addRenderer:localVideoView];
-    [self.view addSubview:localVideoView];
-    
-    NSDictionary* dic = @{@"view":localVideoView,@"stream":stream};
-    [self.viewInfos addObject:dic];
+    for (int i = 0; i < self.views.count; i++)
+    {
+        VideoRendererView* view = [self.views objectAtIndex:i];
+        if (view.isLocal)
+        {
+            return;
+        }
+    }
+    VideoRendererView* videoView = [[VideoRendererView alloc] initWidthStream:stream];
+    videoView.isLocal = YES;
+    [self.views addObject:videoView];
+    [self.view addSubview:videoView];
     [self layoutVideoView];
 }
 -(void)rtcSetRemoteStream:(RTCMediaStream*)stream
 {
-    RTCEAGLVideoView* localVideoView = [[RTCEAGLVideoView alloc] initWithFrame:CGRectMake(200, 300, 100, 100)];
-    localVideoView.contentMode = UIViewContentModeScaleAspectFit;
-    localVideoView.delegate = self;
-    RTCVideoTrack* track = [stream.videoTracks lastObject];
-    [track addRenderer:localVideoView];
-    [self.view addSubview:localVideoView];
-    
-    NSDictionary* dic = @{@"view":localVideoView,@"stream":stream};
-    [self.viewInfos addObject:dic];
+    VideoRendererView* videoView = [[VideoRendererView alloc] initWidthStream:stream];
+    videoView.isLocal = NO;
+    [self.views addObject:videoView];
+    [self.view addSubview:videoView];
     [self layoutVideoView];
 }
 
 -(void)rtcRemoveStream:(RTCMediaStream*)stream
 {
-    for (int i = 0; i < self.viewInfos.count; i++)
+    for (int i = 0; i < self.views.count; i++)
     {
-        NSDictionary* dic = [self.viewInfos objectAtIndex:i];
-        RTCMediaStream* s = [dic objectForKey:@"stream"];
-        RTCEAGLVideoView* view = [dic objectForKey:@"view"];
-        if (s == stream)
+        VideoRendererView* view = [self.views objectAtIndex:i];
+        if (view.stream == stream)
         {
             [view removeFromSuperview];
-            [self.viewInfos removeObjectAtIndex:i];
+            [self.views removeObjectAtIndex:i];
             break;
         }
     }
@@ -205,10 +217,9 @@
     float x = 0;
     float y = 200;
     float width = self.view.bounds.size.width / 3;
-    for (int i = 0; i < self.viewInfos.count; i++)
+    for (int i = 0; i < self.views.count; i++)
     {
-        NSDictionary* dic = [self.viewInfos objectAtIndex:i];
-        RTCEAGLVideoView* view = [dic objectForKey:@"view"];
+        VideoRendererView* view = [self.views objectAtIndex:i];
         [view setFrame:CGRectMake(x, y, width, width)];
         x += width;
         if (x >= self.view.bounds.size.width)

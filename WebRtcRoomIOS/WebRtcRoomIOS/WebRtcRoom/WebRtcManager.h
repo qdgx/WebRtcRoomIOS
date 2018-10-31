@@ -61,6 +61,8 @@ typedef NS_ENUM(NSInteger,PeerConnectionType)
 -(void)connectWithUserId:(NSString *)userId;
 -(void)answer:(NSString*)from to:(NSString*)to room:(NSString*)room sdp:(NSString*)sdp;
 -(void)candidate:(NSString*)from to:(NSString*)to room:(NSString*)room sdp:(NSString*)sdp sdpMLineIndex:(int)sdpMLineIndex sdpMid:(NSString*)sdpMid;
+-(void)joined:(NSString*)idString room:(NSString*)room;
+-(void)offer:(NSString*)from to:(NSString*)to room:(NSString*)room sdp:(NSString*)sdp;
 -(void)close;
 @end
 
